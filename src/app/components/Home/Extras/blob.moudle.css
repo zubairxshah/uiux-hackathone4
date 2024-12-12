@@ -1,0 +1,7 @@
+/* Add this custom CSS in your stylesheet */
+.blob-shape {
+    @apply bg-blue-500 w-64 h-64;
+    border-radius: 50%;
+    background-image: radial-gradient(circle at 33% 33%, #60a5fa, #3b82f6);
+  }
+  

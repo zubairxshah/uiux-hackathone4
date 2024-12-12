@@ -2,6 +2,8 @@ import { josefin } from "@/fonts/josefin";
 import { lato } from "@/fonts/lato";
 import Image from "next/image";
 import CartMenuTop from "./Extras/CartMenuTop";
+import "@/app/components/Home/Extras/blob.module.css"
+
 const ProductGrid = () => {
   const products = [
     {
@@ -40,6 +42,8 @@ const ProductGrid = () => {
 
   return (
     <div className="py-12">
+      <div className="max-w-[1140px] mx-auto px-4">
+        <div className="blob-shape"></div>
       <h2
         className={`${josefin.className} text-4xl font-bold text-center mb-8 text-[#1A0B5B]`}
       >
@@ -62,6 +66,12 @@ const ProductGrid = () => {
                 width={product.w}
                 height={product.h}
               />
+              <div className={`${josefin.className} absolute bottom-1 space-y-2 justify-center invisible 
+              group-hover:visible text-center text-white bg-[#08D15F]`}>
+                <button className="inline-block px-4 py-2 text-sm text-white bg-[#08D15F] hover:bg-[#06b050] 
+          rounded-sm transition-colors duration-300"
+                >View Details</button>
+                </div>
             </div>
             <div
               className={`${lato.className} group w-full text-center hover:text-white group-hover:bg-[#2F1AC4] flex justify-center 
@@ -84,6 +94,7 @@ const ProductGrid = () => {
             </div>
           </div>
         ))}
+      </div>
       </div>
     </div>
   );

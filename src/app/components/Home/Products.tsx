@@ -1,4 +1,7 @@
+import { josefin } from "@/fonts/josefin";
+import { lato } from "@/fonts/lato";
 import Image from "next/image";
+import CartMenuTop from "./Extras/CartMenuTop";
 const ProductGrid = () => {
   const products = [
     {
@@ -6,47 +9,52 @@ const ProductGrid = () => {
       name: "Cantilever Chair",
       code: "Y523201",
       price: "$42.00",
-      w:178,
-      h:178
+      w: 178,
+      h: 178,
     },
     {
       image: "/4.png",
       name: "Cantilever Chair",
       code: "Y523201",
       price: "$42.00",
-      w:178,
-      h:178
+      w: 178,
+      h: 178,
     },
     {
       image: "/5.png",
       name: "Cantilever Chair",
       code: "Y523201",
       price: "$42.00",
-      w:178,
-      h:178
+      w: 178,
+      h: 178,
     },
     {
       image: "/6.png",
       name: "Cantilever Chair",
-      code: "Y523201" ,
+      code: "Y523201",
       price: "$42.00",
-      w:178,
-      h:178
+      w: 178,
+      h: 178,
     },
   ];
 
   return (
-    <div className="bg-gray-50 py-12">
-      <h2 className="text-4xl font-bold text-center mb-8 text-[#1A0B5B]">
+    <div className="py-12">
+      <h2
+        className={`${josefin.className} text-4xl font-bold text-center mb-8 text-[#1A0B5B]`}
+      >
         Featured Products
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {products.map((product, index) => (
           <div
             key={index}
-            className="group relative p-4 hover:bg-[#2F1AC4] hover:text-white rounded-lg shadow hover:shadow-lg transition"
+            className="group rounded-lg shadow-md hover:shadow-lg transition"
           >
-            <div className="flex items-center justify-center h-64 bg-[#F6F7FB]">
+            <div className="relative flex items-center justify-center h-64 bg-[#F6F7FB]">
+              <div className="absolute top-0 left-0 p-3 invisible group-hover:visible">
+                <CartMenuTop />
+              </div>
               <Image
                 src={product.image}
                 alt={product.name}
@@ -55,15 +63,22 @@ const ProductGrid = () => {
                 height={product.h}
               />
             </div>
-            <div className="absolute top-0 left-0 w-full h-full hover:text-white flex items-center justify-center group-hover:border-[#1A0B5B] border-2">
-              
-            </div>
-            <div className="mt-4 text-center hover:text-white">
-              <h3 className="text-lg font-medium">{product.name}</h3>
-              <p className="text-sm text-gray-600 hover:text-white">
+            <div
+              className={`${lato.className} group w-full text-center hover:text-white group-hover:bg-[#2F1AC4] flex justify-center 
+       items-center flex-col gap-2 overflow-hidden`}
+            >
+              <h3 className="text-lg font-medium text-[#FB2E86] group-hover:text-white truncate w-full">
+                {product.name}
+              </h3>
+              <div className="w-[52px] h-1 flex items-center justify-center gap-1">
+                <div className="w-3.5 h-1 bg-[#05e6b7] rounded-[10px]" />
+                <div className="w-3.5 h-1 bg-[#f701a8] rounded-[10px]" />
+                <div className="w-3.5 h-1 group-hover:bg-[#ffe9c0] rounded-[10px] bg-[#00009D]" />
+              </div>
+              <p className="text-sm text-[#151875] group-hover:text-white truncate w-full">
                 Code - {product.code}
               </p>
-              <p className="text-lg font-bold text-gray-900 hover:text-white">
+              <p className="text-lg font-bold text-[#151875] group-hover:text-white truncate w-full">
                 {product.price}
               </p>
             </div>

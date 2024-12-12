@@ -11,7 +11,7 @@ import { CurrencySelect } from './HeaderCurDD';
 export default function Header() {
   return (
     <div className="2xl:w-[1920px] h-[44px] w-[100%] bg-[#7E33E0] text-[#f1f1f1] flex justify-center items-center">
-  <div className="w-[1177px] 2xl:w-[1177px] flex justify-between items-center"> {/* Removed flex-col and simplified */}
+  <div className="w-[1177px] 2xl:w-[1177px] flex justify-between items-center"> 
     {/* Left side with contacts */}
     <div className="flex items-center gap-6"> {/* Simplified left container */}
       <div className="flex items-center gap-3">

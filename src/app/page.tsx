@@ -10,6 +10,7 @@ import Trending2 from './components/Home/Trending2'
 import Discount from './components/Home/Discount'
 import Categories from './components/Home/Categories'
 import Blog from './components/Home/Blog'
+import styles from './page.module.css'	
 
 
 export default function page() {

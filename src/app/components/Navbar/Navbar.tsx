@@ -1,9 +1,10 @@
 "use client"
 import Image from "next/image"
-// import { CiSearch } from "react-icons/ci";
 import { FaSearch } from "react-icons/fa";
 import Link from "next/link";
 import { useState } from "react";
+import HomeMenu from "./HomeMenu";
+import { lato } from "@/fonts/lato";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -12,47 +13,48 @@ function Navbar() {
   };
 
   return (
-    <main className=" 2xl:w-[1920px] w-[100%] border-b-2 bg-neutral-100">
-      <div className=" flex items-center justify-center bg-white h-[70px]">
+    <main className="2xl:w-[1920px] w-[100%] border-b-2 bg-neutral-100">
+      <div className="flex items-center justify-center bg-white h-[70px]">
         {/* Main items */}
         <div className="sm:w-full md:w-[80%] flex items-center justify-between h-[50px]">
-          
-          {/* Logo */}
-          <Image
-            src="/Hekto.png"
-            width={98}
-            height={34}
-            alt="logo"
-          />
+  {/* Logo */}
+  <Image
+    src="/Hekto.png"
+    width={98}
+    height={34}
+    alt="logo"
+  />
 
-          {/* navigation links */}
-          <div
-            className={`${
-              open ? "translate-x-0" : "-translate-x-full"
-            } md:flex md:translate-x-0 md:static w-[50%] md:w-auto bg-indigo-100 md:bg-transparent absolute top-0 left-0 h-screen md:h-auto z-40 transition-transform duration-500 ease-in-out`}
-          >           
-          <ul className="flex flex-col md:flex-row md:gap-x-2 lg:gap-x-5 xl:gap-x-5 2xl:gap-x-10 sm:text-md md:text-sm lg:text-md xl:text-md text-white md:text-black ">
-             
-              <li className="p-4 text-[#0D0E43]  hover:underline hover:text-[#FB2E86] underline-offset-4">
-                <Link href="/">Home</Link>
-              </li>
-              <li className="p-4 text-[#0D0E43] hover:underline hover:text-[#FB2E86] underline-offset-4">
-                <Link href="/pages">Pages</Link>
-              </li>
-              <li className="p-4 text-[#0D0E43] hover:underline hover:text-[#FB2E86] underline-offset-4">
-                <Link href="/products">Products</Link>
-              </li>
-              <li className="p-4 text-[#0D0E43] hover:underline hover:text-[#FB2E86] underline-offset-4">
-                <Link href="/blog">Blog</Link>
-              </li>
-              <li className="p-4 text-[#0D0E43] hover:underline hover:text-[#FB2E86] underline-offset-4">
-                <Link href="/shop">Shop</Link>
-              </li>
-              <li className="p-4 text-[#0D0E43] hover:underline hover:text-[#FB2E86] underline-offset-4">
-                <Link href="/contact">Contact</Link>
-              </li>
-            </ul>
-          </div>
+  {/* navigation links */}
+  <div className={`${
+    open ? "translate-x-0" : "-translate-x-full"
+  } md:flex md:translate-x-0 md:static w-[50%] md:w-auto bg-indigo-100 md:bg-transparent absolute top-0 left-0 h-screen md:h-auto z-40 transition-transform duration-500 ease-in-out`}>           
+    <ul className={`${lato.className} flex flex-col md:flex-row items-center md:items-center 
+    md:gap-x-2 lg:gap-x-5 xl:gap-x-5 2xl:gap-x-10 sm:text-md md:text-sm lg:text-md xl:text-md 
+    text-white md:text-black`}>
+      <li className="md:p-2 text-[#0D0E43] hover:underline hover:text-[#FB2E86] underline-offset-4 mr-[-15px]">
+        <HomeMenu />
+      </li>
+      <li className="md:p-2 text-[#0D0E43] hover:underline hover:text-[#FB2E86] underline-offset-4">
+        <Link href="/pages">Pages</Link>
+      </li>
+      <li className="md:p-2 text-[#0D0E43] hover:underline hover:text-[#FB2E86] underline-offset-4">
+        <Link href="/products">Products</Link>
+      </li>
+      <li className="md:p-2 text-[#0D0E43] hover:underline hover:text-[#FB2E86] underline-offset-4">
+        <Link href="/blog">Blog</Link>
+      </li>
+      <li className="md:p-2 text-[#0D0E43] hover:underline hover:text-[#FB2E86] underline-offset-4">
+        <Link href="/shop">Shop</Link>
+      </li>
+      <li className="md:p-2 text-[#0D0E43] hover:underline hover:text-[#FB2E86] underline-offset-4">
+        <Link href="/contact">Contact</Link>
+      </li>
+    </ul>
+  </div>
+  
+
+
 
           {/* Search small */}
           <div className="flex gap-x-4 items-center">

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { josefin } from "@/fonts/josefin";
 
 
 const slides = [
@@ -50,7 +51,7 @@ function HeroSection() {
     <section className="relative bg-gray-100 py-10 md:py-20 px-5 md:px-20 flex flex-col md:flex-row items-center justify-between overflow-hidden">
       {/* Left Column: Lamp */}
       <div className="md:w-1/4 flex justify-center items-start relative">
-        <div className="absolute top-[-350px] left-[-40px] z-10">
+        <div className="absolute top-[-276px] left-[-40px] z-10">
           <Image
             src="/1.png"
             alt="Lamp"
@@ -62,48 +63,61 @@ function HeroSection() {
       </div>
 
       {/* Center Column: Content (Title, Description, Button) */}
-      <div className="md:w-1/3 max-w-lg text-center md:text-left flex flex-col justify-center">
-        <p className="text-sm text-pink-500 font-medium">
+      <div className="md:w-1/2 max-w-lg text-center md:text-left flex flex-col justify-center">
+        <p className={`${josefin.className}text-sm text-pink-500 font-medium`}>
           Best Furniture For Your Castle...
         </p>
-        <h1 className="text-3xl md:text-4xl font-bold text-indigo-950 leading-tight mt-2">
+        <h1 className={`${josefin.className} text-3xl md:text-4xl font-bold text-indigo-950 leading-tight mt-2`}>
           {current.title}
         </h1>
-        <p className="text-gray-600 text-sm mt-4 leading-relaxed">
+        <p className={`${josefin.className} text-gray-600 text-[13px] mt-4 leading-relaxed`}>
           {current.description}
         </p>
         <Link
           href="#"
-          className="inline-block bg-pink-500 text-white text-sm font-medium py-3 px-6 rounded-md mt-6 hover:bg-pink-600 transition-all duration-300 w-1/3 text-center"
+          className={`${josefin.className}inline-block bg-pink-500 text-white text-sm font-medium py-3 px-6 rounded-md
+           mt-6 hover:bg-pink-600 transition-all duration-300 w-1/3 text-center`}
         >
           {current.buttonText}
         </Link>
       </div>
 
       {/* Right Column: Chair Image */}
-      <div className="md:w-1/3 flex justify-center items-center relative">
-        <div className="relative bg-gradient-to-r from-pink-100 to-purple-200 rounded-full p-10 shadow-xl mt-10 mx-auto">
-          <Image
-            src="/2.png"
-            alt="Furniture Chair"
-            width={706}
-            height={689}
-            className="object-contain w-full h-auto"
-          />
-        </div>
-        
-      </div>
+      <div className="md:w-1/3 relative">
+  <div className="absolute inset-0 flex items-center justify-center">
+    {/* Increased size of ellipses */}
+    <div 
+      className="absolute w-[400px] h-[400px] bg-[#ECD2FA] rounded-full opacity-30 
+      transform translate-x-[10px] translate-y-[-40px] hover:scale-110 transition-transform duration-300"
+    />
+    <div 
+      className="absolute w-[400px] h-[400px] bg-[#ECD2FA] rounded-full opacity-30 
+      transform -translate-x-4 -translate-y-[5px] hover:scale-110 transition-transform duration-300"
+    />
+    
+  </div>
+  <div className="relative z-10">
+    <Image
+      src="/2.png"
+      alt="Furniture Chair"
+      width={706}
+      height={689}
+      className="object-contain w-full h-auto max-w-[400px] mx-auto"
+    />
+  </div>
+</div>
+
 
       {/* Navigation Polka */}
-      <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-4">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full ${
+            className={`w-2 h-2 [transform:rotate(130deg)] ${
               currentSlide === index
                 ? "bg-pink-500"
-                : "bg-gray-300 hover:bg-gray-400"
+                : "hover:bg-gray-300 bg-[#F2F0FF] border border-pink-500"
             }`}
           ></button>
         ))}

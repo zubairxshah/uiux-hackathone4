@@ -4,31 +4,30 @@ import Image from "next/image";
 import Link from "next/link";
 import { josefin } from "@/fonts/josefin";
 
-
 const slides = [
   {
     title: "New Furniture Collection Trends in 2020",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
     buttonText: "Shop Now",
-    chairImage: "/sofa1.png", 
-    lampImage: "/lamp.png", 
+    chairImage: "/sofa1.png",
+    lampImage: "/lamp.png",
   },
   {
     title: "Modern Chair Designs for Your Home",
     description:
       "Discover the latest modern furniture trends to elevate your living space.",
     buttonText: "Shop Now",
-    chairImage: "/sofa1.png", 
-    lampImage: "/lamp.png", 
+    chairImage: "/sofa1.png",
+    lampImage: "/lamp.png",
   },
   {
     title: "Elegant Furniture for Every Space",
     description:
       "Bring timeless elegance to your home with our exclusive furniture collection.",
     buttonText: "Shop Now",
-    chairImage: "/sofa1.png", 
-    lampImage: "/lamp.png", 
+    chairImage: "/sofa1.png",
+    lampImage: "/lamp.png",
   },
 ];
 
@@ -55,8 +54,8 @@ function HeroSection() {
           <Image
             src="/1.png"
             alt="Lamp"
-            width={387} 
-            height={387} 
+            width={387}
+            height={387}
             className="object-contain"
           />
         </div>
@@ -67,10 +66,14 @@ function HeroSection() {
         <p className={`${josefin.className}text-sm text-pink-500 font-medium`}>
           Best Furniture For Your Castle...
         </p>
-        <h1 className={`${josefin.className} text-3xl md:text-4xl font-bold text-indigo-950 leading-tight mt-2`}>
+        <h1
+          className={`${josefin.className} text-3xl md:text-4xl font-bold text-indigo-950 leading-tight mt-2`}
+        >
           {current.title}
         </h1>
-        <p className={`${josefin.className} text-gray-600 text-[13px] mt-4 leading-relaxed`}>
+        <p
+          className={`${josefin.className} text-gray-600 text-[13px] mt-4 leading-relaxed`}
+        >
           {current.description}
         </p>
         <Link
@@ -84,31 +87,49 @@ function HeroSection() {
 
       {/* Right Column: Chair Image */}
       <div className="md:w-1/3 relative">
-  <div className="absolute inset-0 flex items-center justify-center">
-    {/* Increased size of ellipses */}
-    <div 
-      className="absolute w-[400px] h-[400px] bg-[#ECD2FA] rounded-full opacity-30 
+        <div className="absolute inset-0 flex items-center justify-center">
+          {/* Increased size of ellipses */}
+          <div
+            className="absolute w-[400px] h-[400px] bg-[#ECD2FA] rounded-full opacity-30 
       transform translate-x-[10px] translate-y-[-40px] hover:scale-110 transition-transform duration-300"
-    />
-    <div 
-      className="absolute w-[400px] h-[400px] bg-[#ECD2FA] rounded-full opacity-30 
+          />
+          <div
+            className="absolute w-[400px] h-[400px] bg-[#ECD2FA] rounded-full opacity-30 
       transform -translate-x-4 -translate-y-[5px] hover:scale-110 transition-transform duration-300"
-    />
-    
+          />
+          {/* <div
+            className="w-64 h-64 bg-blue-500 rounded-tl-[200px] rounded-bl-[50px] rounded-br-[50px] rounded-tr-[50px]"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 33% 33%, #60a5fa, #3b82f6)",
+            }}
+          ></div> */}
+        </div>
+        <div className="relative z-10">
+        <div
+            className="absolute top-0 right-0 w-[70px] h-[70px] bg-[#00C1FE] rotate-45 opacity-90
+             inline-flex items-center justify-center"
+            style={{
+              
+              borderRadius: "60% 70% 60% 50% / 30% 50% 60% 80%",
+            }}
+          >
+            <div className={`${josefin.className} -rotate-45 flex flex-col items-center justify-center`}> 
+    <p className="text-white font-medium text-md">50%</p>
+    <p className="text-white font-medium text-md">off</p>
   </div>
-  <div className="relative z-10">
-    <Image
-      src="/2.png"
-      alt="Furniture Chair"
-      width={706}
-      height={689}
-      className="object-contain w-full h-auto max-w-[400px] mx-auto"
-    />
-  </div>
-</div>
+            </div>
+          <Image
+            src="/2.png"
+            alt="Furniture Chair"
+            width={706}
+            height={689}
+            className="object-contain w-full h-auto max-w-[400px] mx-auto"
+          />
+        </div>
+      </div>
 
-
-      {/* Navigation Polka */}
+      {/* Navigation Rhombus */}
       <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-4">
         {slides.map((_, index) => (
           <button
@@ -136,15 +157,8 @@ function HeroSection() {
       >
         ❯
       </button>
-
-      
-
-      
     </section>
   );
 }
 
 export default HeroSection;
-
-
-

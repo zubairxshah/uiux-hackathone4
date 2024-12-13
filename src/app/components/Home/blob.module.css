@@ -1,0 +1,13 @@
+#art div{
+.blobShape {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(8, 209, 95, 0.1);
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: -1;
+}
+
+
+}

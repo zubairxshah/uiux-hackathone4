@@ -2,7 +2,6 @@ import { josefin } from "@/fonts/josefin";
 import { lato } from "@/fonts/lato";
 import Image from "next/image";
 import CartMenuTop from "./Extras/CartMenuTop";
-import "@/app/components/Home/Extras/blob.module.css"
 
 const ProductGrid = () => {
   const products = [
@@ -43,7 +42,6 @@ const ProductGrid = () => {
   return (
     <div className="py-12">
       <div className="max-w-[1140px] mx-auto px-4">
-        <div className="blob-shape"></div>
       <h2
         className={`${josefin.className} text-4xl font-bold text-center mb-8 text-[#1A0B5B]`}
       >

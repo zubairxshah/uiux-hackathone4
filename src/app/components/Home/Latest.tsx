@@ -1,68 +1,111 @@
+"use client";
+import Link from "next/link";
+import { josefin } from "@/fonts/josefin";
+import React, { useState } from "react";
+import latestData from "./Extras/latestdata";
+import styles from "../../styles/main.module.css";
 import Image from "next/image";
-export default function Latest() {
-    const products = [
-      { id: 7, name: "Comfort Handy Craft", price: "$42.00", oldPrice: "$65.00" },
-      { id: 8, name: "Comfort Handy Craft", price: "$42.00", oldPrice: "$65.00" },
-      { id: 9, name: "Comfort Handy Craft", price: "$42.00", oldPrice: "$65.00" },
-      { id: 10, name: "Comfort Handy Craft", price: "$42.00", oldPrice: "$65.00" },
-      { id: 11 , name: "Comfort Handy Craft", price: "$42.00", oldPrice: "$65.00" },
-      { id: 12, name: "Comfort Handy Craft", price: "$42.00", oldPrice: "$65.00" },
+import { lato } from "@/fonts/lato";
+import CartMenuLatest from "./Extras/CartMenuLatest";
+
+const Latest = () => {
+    const tags = [
+      { btn: "New Arrival" },
+      { btn: "Best Seller" },
+      { btn: "Featured" },
+      { btn: "Special Offer" },
     ];
   
-    const ProductCard = ({ image, name, price, oldPrice }: ProductCardProps) => {
-      return (
-        <div className="border rounded-lg shadow-md p-4 bg-[#f7f7f7]">
-          <div className="w-360 h-270 mx-auto">
-            <Image
-              src={image}
-              alt={name}
-              className="w-full h-250 object-cover rounded-t-lg mb-4"
-              width={250}
-              height={250}
-            />
-          </div>
-          <div className="bg-white p-4 rounded-b-lg">
-            <h2 className="text-lg font-semibold mb-2">{name}</h2>
-            <div className="flex items-center">
-              <span className="text-pink-500 font-bold mr-2">{price}</span>
-              <span className="text-gray-400 line-through">{oldPrice}</span>
-            </div>
-          </div>
-        </div>
-      );
-    };
-  
-    interface ProductCardProps {
-      image: string;
-      name: string;
-      price: string;
-      oldPrice: string;
-    }
+    const [active, setActive] = useState(tags[0].btn);
   
     return (
-      <div className="container mx-auto px-4 py-8" style={{ backgroundColor: "white" }}>
-        <h1 className="text-3xl font-bold text-center mb-8">Latest Products</h1>
-        <div className="flex justify-center space-x-8  text-[#151875]">
-          <a href="#" className="text-[#FB4997] font-semibold">
-            New Arrival
-          </a>
-          <a href="#" className="hover:text-[#FB4997]">Best Seller</a>
-          <a href="#" className="hover:text-[#FB4997]">Featured</a>
-          <a href="#" className="hover:text-[#FB4997]">Special Offer</a>
+      <section className="container mx-auto px-4 md:px-8 lg:px-16 py-16">
+        {/* Title */}
+        <h1 className={`${josefin.className} text-4xl font-bold text-center mb-12 text-navy`}>
+          Latest Products
+        </h1>
+  
+        {/* Tags/Filters */}
+        <div className="hidden lg:block mb-12">
+          <div className="flex justify-center gap-12">
+            {tags.map((item) => (
+              <div
+                key={item.btn}
+                className={`${lato.className} text-lg cursor-pointer transition-all duration-200
+                  ${active === item.btn 
+                    ? "text-pink font-semibold underline" 
+                    : "text-navy hover:text-pink hover:font-semibold hover:underline"
+                  }`}
+                onClick={() => setActive(item.btn)}
+              >
+                {item.btn}
+              </div>
+            ))}
+          </div>
         </div>
   
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8">
-          {products.map((product) => (
-            <ProductCard
-              key={product.id}
-              image={`/${product.id}.png`}
-              name={product.name}
-              price={product.price}
-              oldPrice={product.oldPrice}
-            />
-          ))}
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {latestData
+            .filter((e) => e.category == active)
+            .slice(0, 6)
+            .map((item, index) => (
+              <div key={index} className="group">
+                {/* Product Image Container */}
+                <div className="bg-hex h-[360px] flex items-center justify-center relative mb-6 group-hover:bg-white transition-colors">
+                  {/* Sale Tag */}
+                  <div className="absolute top-4 left-4">
+                    <div className="relative">
+                      <Image
+                        src="/vectors/vector-sale.svg"
+                        alt="sale"
+                        width={85}
+                        height={57}
+                      />
+                      <p className={`
+                        ${josefin.className} 
+                        absolute 
+                        top-[22px]
+                        left-[25px]
+                        text-sm 
+                        text-white 
+                        rotate-[18.12deg]
+                        whitespace-nowrap
+                        transform-gpu
+                      `}>
+                        Sale
+                      </p>
+                    </div>
+                  </div>
+  
+                  {/* Cart Menu */}
+                  <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <CartMenuLatest />
+                  </div>
+  
+                  {/* Product Image */}
+                  <Image
+                    src={item.url}
+                    width={item.w}
+                    height={item.h}
+                    alt={item.info}
+                    className="object-contain max-h-[280px]"
+                  />
+                </div>
+  
+                {/* Product Info */}
+                <div className="flex justify-between items-center">
+                  <h4 className={`${josefin.className} text-navy border-b-2`}>{item.info}</h4>
+                  <div className="flex gap-3">
+                    <h4 className={`${josefin.className} text-md text-navy`}>{item.info2}</h4>
+                    <h5 className={`${josefin.className} text-md text-pink line-through`}>{item.info3}</h5>
+                  </div>
+                </div>
+              </div>
+            ))}
         </div>
-      </div>
+      </section>
     );
-  }
+  };
   
+  export default Latest;

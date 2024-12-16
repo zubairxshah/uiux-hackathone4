@@ -1,108 +1,79 @@
-import Image from "next/image";
+import React from 'react'
+import {trending, excutiveData} from '@/app/components/Home/Extras/trendingdata'
+import Image from 'next/image'
+import styles from "@/app/styles/main.module.css"
+import { josefin } from '@/fonts/josefin'
 
-export default function TrendingProducts() {
+const Trending = () => {
+    
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-2xl md:text-3xl font-bold mb-8">Trending Products</h1>
-
-      {/* Trending Products Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-        {[
-          { id: 17, image: "/17.png", w: 171, h: 171 },
-          { id: 18, image: "/18.png", w: 187, h: 187 },
-          { id: 19, image: "/19.png", w: 197, h: 189 },
-          { id: 11, image: "/11.png", w: 253, h: 211 },
-        ].map((item) => (
-          <div
-            key={item.id}
-            className="bg-white border rounded-lg shadow-md overflow-hidden p-4"
-          >
-            <div className="aspect-square relative bg-gray-100 rounded-lg mb-3">
-              <Image
-                src={item.image}
-                alt={`Cantilever chair ${item.id}`}
-
-                className="object-cover"
-                width={item.w} height={item.h}
-              />
-            </div>
-            <h3 className="text-lg font-semibold mb-2">Cantilever chair</h3>
-            <div className="flex items-center gap-2">
-              <span className="text-black">$26.00</span>
-              <span className="text-gray-400 line-through">$42.00</span>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Promo Section */}
-      <div className="grid grid-cols-1 md:grid-cols-7 gap-4 mb-8">
-        {/* Left Promo */}
-        <div className="md:col-span-3 bg-[#FFF6FB] rounded-lg p-6">
-          <div className="flex items-center">
-            <div className="w-[420px] h-[270px]">
-              <h3 className="text-xl font-bold text-[#151875]">23% off in all products</h3>
-              <button className="text-[#FB2E86]">Shop Now</button>
-            </div>
-            <div className="w-[213px] h-[207px]">
-              <Image
-                src="/20.png"
-                alt="Kitchen mitt"
-                width={213}
-                height={207}
-                className="object-contain"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Center Promo */}
-        <div className="md:col-span-3 bg-[#F6F7FB] rounded-lg p-6">
-          <div className="flex items-center justify-between">
-            <div className="w-[420px] h-[270px]">
-              <h3 className="text-xl font-bold text-[#151875] text-left">23% off in all products</h3>
-              <button className="text-[#FB2E86] text-left">View Collection</button>
-            </div>
-            <div className="relative w-[312px] h-[207px]">
-              <Image
-                src="/21.png"
-                alt="Kitchen mitt"
-                width={213}
-                height={207}
-                className="object-contain"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Right Panel */}
-        <div className="md:col-span-1 text-[#151875]">
-          <div className="space-y-4">
-            {[
-              { id: 1, image: "/a.png", title: "Executive Chair", price: "$32.00", w: 67, h: 71 },
-              { id: 2, image: "/b.png", title: "Comfort Sofa", price: "$45.00", w: 67, h: 67 },
-              { id: 3, image: "/c.png", title: "Modern Table", price: "$28.00", w: 67, h: 67 },
-            ].map((item) => (
-              <div key={item.id} className="flex items-center gap-2">
-                <div className="relative w-12 h-12 bg-gray-100 rounded">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    width={item.w}
-                    height={item.h}
-                    className="object-cover rounded"
-                  />
+    <div className={`md:${styles.container} md:${styles.wrapper} md:mt-32 md:mb-32 px-[.8rem]`}>
+        <h1 className={`${josefin.className} text-navy text-center md:mb-10 mb-4 
+        text-4xl font-extrabold mt-10`}>Trending Products</h1>
+        <div  className='md:flex gap-6'>
+            {trending.map((item) => {
+                return <div key={item.title} className='shadow-primary h-[350px] md:w-[270px] p-3  mb-8 md:mb-0'>
+                    <div>
+                        <div className='bg-hex2 grid justify-center items-center  h-[227px]'>
+                            <img src={item.pic} alt="" />
+                        </div>
+                        <div className='text-center text-navy mt-5'>
+                            <div>
+                                <h4 className='font-bold'>{item.title}</h4>
+                            </div>
+                            <div className='flex justify-center items-center gap-2'>
+                                <h5 className='font-semibold'>{item.offerPrice}</h5>
+                                <h6 className='text-xs font-semibold text-black_rgb'>{item.regularPrice}</h6>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                  <h4 className="text-sm font-medium">{item.title}</h4>
-                  <span className="text-sm text-[#151875] line-through">{item.price}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+            })}
         </div>
 
-      </div>
+
+        <div className='md:flex gap-6 mt-7 '>
+            <div className='bg-shade1 md:w-[420px] h-[270px] p-6  mb-8 bg-[#FFF6FB]'>
+                <h3 className='text-navy font-josefin'>23% off in all products</h3>
+                <h4 className='text-pink font-lato font-semibold'>Shop Now</h4>
+                <div className='grid justify-end'>
+                    <Image src="/trending/discount-1.png" alt='clock' 
+                    width={213} height={207} />
+                </div>
+            </div>
+
+            <div className='bg-shade md:w-[420px] h-[270px] p-6   mb-8'>
+                <h3 className='text-navy font-josefin'>23% off in all products</h3>
+                <h4 className='text-pink font-lato font-semibold'>View Collection</h4>
+                <div className='grid justify-end'>
+                <Image src="/trending/discount-2.png" alt='table' 
+                    width={312} height={173} />
+                </div>
+            </div>
+
+            <div className=''>
+                {excutiveData.map((item) => {
+                return <div key={item.price} className=''>
+                    <div className='flex items-center pb-6'>
+                    <div className='bg-hex2 h-[74px] w-[107px] mr-[9px] grid justify-center gap-y-4 items-center '>
+                        <img src={item.pic} alt="" />
+                    </div>
+                    <div className='flex items-center h-full'>
+                        <div>
+                            <h5 className='text-navy font-josefin font-semibold'>{item.title}</h5>
+                            <h6 className='text-navy font-josefin font-medium text-sm'>{item.price}</h6>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                })}
+            </div>
+        </div>
+
+
+
     </div>
-  );
+  )
 }
+
+export default Trending

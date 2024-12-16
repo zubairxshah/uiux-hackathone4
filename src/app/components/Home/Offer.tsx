@@ -1,3 +1,5 @@
+import { josefin } from "@/fonts/josefin";
+import { lato } from "@/fonts/lato";
 import Image from "next/image";
 
 export default function Home() {
@@ -10,7 +12,8 @@ export default function Home() {
   
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-white">
-        <h1 className="text-5xl font-extrabold text-[#151875] mb-8">What Shopex Offer!</h1>
+        <h1 className={`${josefin.className} text-4xl font-extrabold text-[#151875] mb-8`}>
+          What Shopex Offer!</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
             <div
@@ -19,8 +22,8 @@ export default function Home() {
             >
               <Image src={feature.icon} alt={feature.title} className="w-16 h-16 mb-4" 
               width={160} height={16} />
-              <h2 className="text-lg font-semibold">{feature.title}</h2>
-              <p className="text-gray-500 mt-2">{feature.description}</p>
+              <h2 className={`${josefin.className} text-lg font-semibold`}>{feature.title}</h2>
+              <p className={`${lato.className} text-gray-500 mt-2`}>{feature.description}</p>
             </div>
           ))}
         </div>

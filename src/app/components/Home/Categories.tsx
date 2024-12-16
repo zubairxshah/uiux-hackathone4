@@ -1,75 +1,49 @@
-import Image from "next/image";
+import React from 'react'
+import {categoryData} from '@/app/components/Home/Extras/categoriesdata'
 
-export default function TopCategories() {
+const TopCategory = () => {
+
   return (
-    <section className="px-4 py-8 lg:py-16 bg-white">
-      <h2 className="text-center text-2xl lg:text-3xl font-bold text-blue-900 mb-8">
-        Top Categories
-      </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 lg:gap-8 max-w-6xl mx-auto">
-        {/* Category 1 */}
-        <div className="relative flex flex-col items-center text-center space-y-2">
-          <div className="w-32 h-32 rounded-full border-4 border-purple-500 flex items-center justify-center relative">
-            <Image
-              src="/31.png" 
-              alt="Mini LCW Chair"
-              width={100}
-              height={100}
-              className="object-contain"
-            />
-            <button className="absolute bottom-2 bg-green-500 text-white text-xs px-3 py-1 rounded-full">
-              View Shop
-            </button>
-          </div>
-          <h3 className="text-sm font-medium">Mini LCW Chair</h3>
-          <p className="text-sm font-semibold text-gray-600">$56.00</p>
-        </div>
+    <div className='lg:container lg:wrapper px-[.8rem] lg:mt-32 mt-12'>
+        <h1 className='text-navy text-center md:mb-12 md-8'>Top Categories</h1>
 
-        {/* Category 2 */}
-        <div className="flex flex-col items-center text-center space-y-2">
-          <div className="w-32 h-32 rounded-full border-4 border-gray-300 flex items-center justify-center">
-            <Image
-              src="/32.png"
-              alt="Mini LCW Chair"
-              width={100}
-              height={100}
-              className="object-contain"
-            />
-          </div>
-          <h3 className="text-sm font-medium">Mini LCW Chair</h3>
-          <p className="text-sm font-semibold text-gray-600">$56.00</p>
+        <div className='w-full lg:flex gap-3 2xl:gap-9'>
+            {categoryData.map((item) => {
+                return <div className=''>
+                    <div className=' flex justify-center'>
+                        <div>
+                            <div className='flex justify-center bg-hex shadow-primary 2xl:h-[269px] h-[220px] w-[220px] 2xl:w-[269px] p-6 rounded-full '>
+                                <img src={item.pic} alt="" />
+                            </div>
+                            
+                            <div className='text-center mt-6 text-navy md:mb-0 mb-16'>
+                                <h3 className='font-josefin  font-medium'>{item.title}</h3>
+                                <h4>{item.price}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            })}
         </div>
-
-        {/* Category 3 */}
-        <div className="flex flex-col items-center text-center space-y-2">
-          <div className="w-32 h-32 rounded-full border-4 border-gray-300 flex items-center justify-center">
-            <Image
-              src="/33.png" 
-              alt="Mini LCW Chair"
-              width={100}
-              height={100}
-              className="object-contain"
-            />
-          </div>
-          <h3 className="text-sm font-medium">Mini LCW Chair</h3>
-          <p className="text-sm font-semibold text-gray-600">$56.00</p>
-        </div>
-
-        {/* Category 4 */}
-        <div className="flex flex-col items-center text-center space-y-2">
-          <div className="w-32 h-32 rounded-full border-4 border-gray-300 flex items-center justify-center">
-            <Image
-              src="/31.png"
-              alt="Mini LCW Chair"
-              width={100}
-              height={100}
-              className="object-contain"
-            />
-          </div>
-          <h3 className="text-sm font-medium">Mini LCW Chair</h3>
-          <p className="text-sm font-semibold text-gray-600">$56.00</p>
-        </div>
-      </div>
-    </section>
-  );
+    </div>
+    // <div className='md:container md:wrapper px-[.8rem] md:mt-32 mt-12'>
+    //     <h1 className='text-navy text-center md:mb-12 md-8'>Top Categories</h1>
+    //     <div className='md:flex md:gap-9 sb w-full'>
+    //         {topgoriesData.map((item) => {
+    //             return <div className='sb'>
+    //                 <div className='bg-hex shadow-primary flex items-center justify-center 2xl:h-[269px] h-[330px] w-[328px] 2xl:w-[269px] rounded-full'>
+    //                     <img src={item.pic} alt="" />
+    //                 </div>
+                    
+    //                 <div className='text-center mt-6 text-navy md:mb-0 mb-16'>
+    //                     <h3 className='font-josefin  font-medium'>{item.title}</h3>
+    //                     <h4>{item.price}</h4>
+    //                 </div>
+    //             </div>
+    //         })}
+    //     </div>
+    // </div>
+  )
 }
+
+export default TopCategory

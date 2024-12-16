@@ -56,13 +56,13 @@ export default function UniqueProduct() {
             >
               Add To Cart
             </button>
-            <div className="space-y-1">
+            <div className="">
               <h3
                 className={`${josefin.className} font-semibold text-[#151875]`}
               >
                 B&B Italian Sofa
               </h3>
-              <p className={`${lato.className} text-[#ACABC3]`}>$52.00</p>
+              <p className={`${lato.className} text-[#151875]`}>$52.00</p>
             </div>
           </div>
         </div>

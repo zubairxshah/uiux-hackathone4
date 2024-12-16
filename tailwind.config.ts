@@ -22,6 +22,7 @@ const config: Config = {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
 				light_gray: "#1A0B5B",
+				light_gray1: "#B7BACB",
 				pink: "#FB2E86",
 				lightGreen: "#08D15F",
 				navy: "#151875",

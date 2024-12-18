@@ -63,7 +63,7 @@ function HeroSection() {
 
       {/* Center Column: Content (Title, Description, Button) */}
       <div className="md:w-1/2 max-w-lg text-center md:text-left flex flex-col justify-center">
-        <p className={`${josefin.className}text-sm text-pink-500 font-medium`}>
+        <p className={`${josefin.className}text-sm text-pink font-medium`}>
           Best Furniture For Your Castle...
         </p>
         <h1
@@ -72,13 +72,13 @@ function HeroSection() {
           {current.title}
         </h1>
         <p
-          className={`${josefin.className} text-gray-600 text-[13px] mt-4 leading-relaxed`}
+          className={`${josefin.className} text-navy text-[13px] mt-4 leading-relaxed`}
         >
           {current.description}
         </p>
         <Link
           href="#"
-          className={`${josefin.className}inline-block bg-pink-500 text-white text-sm font-medium py-3 px-6 rounded-md
+          className={`${josefin.className}inline-block bg-pink text-white text-sm font-medium py-3 px-6 rounded-md
            mt-6 hover:bg-pink-600 transition-all duration-300 w-1/3 text-center`}
         >
           {current.buttonText}
@@ -137,8 +137,8 @@ function HeroSection() {
             onClick={() => setCurrentSlide(index)}
             className={`w-2 h-2 [transform:rotate(130deg)] ${
               currentSlide === index
-                ? "bg-pink-500"
-                : "hover:bg-gray-300 bg-[#F2F0FF] border border-pink-500"
+                ? "bg-pink"
+                : "hover:bg-pink bg-[#F2F0FF] border border-pink"
             }`}
           ></button>
         ))}

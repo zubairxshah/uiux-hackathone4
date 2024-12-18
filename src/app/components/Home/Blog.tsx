@@ -1,54 +1,51 @@
 import React from "react";
 import Image from "next/image";
-
-const blogPosts = [
-  {
-    id: 1,
-    author: "SaberAli",
-    date: "21 August,2020",
-    title: "Top essential Trends in 2021",
-    description: "More of this less hello samlande lied much over tightly circa horse taped mightly",
-    imgSrc: "/28.jpg",
-  },
-  {
-    id: 2,
-    author: "Surfuxion",
-    date: "21 August,2020",
-    title: "Top essential Trends in 2021",
-    description: "More of this less hello samlande lied much over tightly circa horse taped mightly",
-    imgSrc: "/29.jpg",
-  },
-  {
-    id: 3,
-    author: "SaberAli",
-    date: "21 August,2020",
-    title: "Top essential Trends in 2021",
-    description: "More of this less hello samlande lied much over tightly circa horse taped mightly",
-    imgSrc: "/30.jpg",
-  },
-];
+import { blogPosts } from "./Extras/bloghomedata"; 
+import { josefin } from "@/fonts/josefin";
+import { CalendarDays } from "lucide-react";
+import { FaPenNib } from "react-icons/fa";
+import { lato } from "@/fonts/lato";
 
 const LeatestBlog: React.FC = () => {
   return (
-    <section className="w-auto justify-center items-center mx-auto px-4 py-12">
-      <h1 className="text-center text-3xl font-bold text-blue-900 mb-8">Latest Blog</h1>
+    <section className="w-auto mx-auto px-4 py-12">
+      <h1 className={`${josefin.className} text-center text-4xl font-bold text-navy mb-8`}>
+        Latest Blog
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
         {blogPosts.map((post) => (
           <div
             key={post.id}
-            className="bg-white rounded-md shadow-md p-4"
-            style={{ width: "300px", height: "420px" }}
+            className="bg-white rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.1)] overflow-hidden"
+            style={{ width: "300px" }}
           >
-            <Image src={post.imgSrc} alt={post.title} className="h-40 w-full object-cover" width={40} height={40}/>
-            <div className="mt-4">
-              <div className="text-sm text-gray-500 flex items-center gap-2">
+            <div className="w-full">
+              <Image 
+                src={post.imgSrc} 
+                alt={post.title} 
+                className="w-full h-[200px] object-cover" 
+                width={300} 
+                height={200} 
+              />
+            </div>
+            <div className="p-4">
+              <div className={`${josefin.className} text-sm text-navy flex items-center gap-2`}>
+                <FaPenNib size={12} className="text-pink"/>
                 <span>{post.author}</span>
-                <span>•</span>
+                <CalendarDays size={16} className="ml-2 text-[#FFA454]"/>
                 <span>{post.date}</span>
               </div>
-              <h2 className="text-lg font-semibold text-gray-800 mt-2 hover:text-[#FB2E86]">{post.title}</h2>
-              <p className="text-sm text-gray-600 mt-2">{post.description}</p>
-              <button className="text-blue-500 underline mt-4 hover:text-[#FB2E86]">Read More</button>
+              <h2 className={`${josefin.className} text-lg font-semibold text-gray-800 mt-2 
+              hover:text-[#FB2E86] transition-colors duration-200`}>
+                {post.title}
+              </h2>
+              <p className={`${lato.className} text-sm text-gray-600 mt-2`}>
+                {post.description}
+              </p>
+              <button className={`${lato.className} text-sm text-blue-500 hover:text-[#FB2E86] 
+              underline mt-4 transition-colors duration-200`}>
+                Read More
+              </button>
             </div>
           </div>
         ))}

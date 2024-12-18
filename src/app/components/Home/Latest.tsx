@@ -1,9 +1,8 @@
 "use client";
-import Link from "next/link";
+
 import { josefin } from "@/fonts/josefin";
 import React, { useState } from "react";
 import latestData from "./Extras/latestdata";
-import styles from "../../styles/main.module.css";
 import Image from "next/image";
 import { lato } from "@/fonts/lato";
 import CartMenuLatest from "./Extras/CartMenuLatest";
@@ -69,7 +68,7 @@ const Latest = () => {
                         left-[25px]
                         text-sm 
                         text-white 
-                        rotate-[18.12deg]
+                        rotate-[-18.12deg]
                         whitespace-nowrap
                         transform-gpu
                       `}>

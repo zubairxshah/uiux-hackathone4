@@ -1,7 +1,6 @@
 import React from 'react'
 import {trending, excutiveData} from '@/app/components/Home/Extras/trendingdata'
 import Image from 'next/image'
-import styles from "@/app/styles/main.module.css"
 import { josefin } from '@/fonts/josefin'
 import { lato } from '@/fonts/lato'
 
@@ -16,7 +15,7 @@ const Trending = () => {
             return <div key={item.id} className='shadow-primary h-[350px] p-3 mb-8 md:mb-0'>
                 <div>
                     <div className='bg-hex2 grid justify-center items-center h-[227px]'>
-                        <img src={item.pic} alt="" />
+                        <Image src={item.pic} alt="chairs" width={171} height={171} />
                     </div>
                     <div className='text-center mt-5'>
                         <div>
@@ -59,7 +58,7 @@ const Trending = () => {
                     <div className='flex items-center pb-6'>
                         <div className='bg-hex2 h-[74px] w-[107px] mr-[9px] 
                         bg-hex grid justify-center gap-y-4 items-center cursor-pointer'>
-                            <img src={item.pic} alt="" />
+                            <Image src={item.pic} alt="exec chairs" width={67} height={67} />
                         </div>
                         <div className='flex items-center h-full'>
                             <div>

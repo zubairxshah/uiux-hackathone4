@@ -9,6 +9,11 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		fontFamily:{
+			'lato':['Lato', 'sans-serif'],
+			'josefin':['Josefin Sans', 'sans-serif'],
+			'roboto':['Roboto','sans-serif']
+		},
   		backgroundImage: {
   			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
   			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
@@ -26,7 +31,11 @@ const config: Config = {
 				pink: "#FB2E86",
 				lightGreen: "#08D15F",
 				navy: "#151875",
+				violet: "#2B3CAB",
 				hex: "#F7F7F7",
+				hexxd: "#8A8FB9",
+				hexlight: "#FBFBFF",
+				brinjal: "#101750",
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'

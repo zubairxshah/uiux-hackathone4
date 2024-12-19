@@ -26,17 +26,17 @@ const Footer = () => {
                 {/* Search */}
                 <div className="w-full bg-white rounded-md items-center flex">
                   <input
-                    className="w-[70%] h-11 p-1 bg-white text-black outline-none opacity-75"
+                    className="w-[70%] h-11 p-1 bg-white text-black outline-none opacity-75 font-josefin"
                     type="search"
                     placeholder="Search"
                   />
-                  <button className="text-base font-medium w-[30%] h-[39px] bg-[#FB2E86] text-[#F3F9FF]">
+                  <button className=" font-roboto text-base font-medium w-[30%] h-[39px] bg-[#FB2E86] text-[#F3F9FF]">
                     Sign Up
                   </button>
                 </div>
               </div>
 
-              <p className="mt-4 text-xs leading-4 text-center sm:text-left">
+              <p className="mt-4 text-xs leading-4 text-center sm:text-left font-lato">
                 Contact Info: <br />
                 17 Princess Road, London, Greater London NW1 8JR, UK
               </p>
@@ -44,8 +44,8 @@ const Footer = () => {
   
             {/* Categories Section */}
             <div className="mt-4 leading-6">
-              <h3 className="text-[18px] text-black">Categories</h3>
-              <ul className="mt-2 space-x-0 md:space-y-5 md:mb-6  text-sm">
+              <h3 className="text-[18px] text-black font-josefin">Categories</h3>
+              <ul className="mt-2 space-x-0 md:space-y-5 md:mb-6 font-lato text-sm">
                 <li>Laptops & Computers</li>
                 <li>Cameras & Photography</li>
                 <li>Smart Phones & Tablets</li>
@@ -56,8 +56,8 @@ const Footer = () => {
   
             {/* Customer Care Section */}
             <div className="mt-4 leading-6">
-              <h3 className="text-[18px] text-black">Customer Care</h3>
-              <ul className="mt-2 space-y-2 text-sm">
+              <h3 className="text-[18px] text-black font-josefin">Customer Care</h3>
+              <ul className="mt-2 space-y-2 text-sm font-lato">
                 <li>My Account</li>
                 <li>Discount</li>
                 <li>Returns</li>
@@ -68,8 +68,8 @@ const Footer = () => {
   
             {/* Pages Section */}
             <div className="mt-4 leading-6">
-              <h3 className="text-[18px] text-black">Pages</h3>
-              <ul className="mt-2 space-y-2 text-sm">
+              <h3 className="text-[18px] text-black font-josefin">Pages</h3>
+              <ul className="mt-2 space-y-2 text-sm font-lato">
                 <li>Blog</li>
                 <li>Browse the Shop</li>
                 <li>Category</li>
@@ -89,7 +89,7 @@ const Footer = () => {
         <div className="bg-[#E7E4F8]  ">
     <div className="container px-5  h-[80px] sm:h-[53px] mx-auto flex items-center sm:flex-row flex-col">
       
-    <p className="text-sm text-[#9DA0AE] sm:ml-6 sm:mt-0 mt-4">
+    <p className="text-sm text-[#9DA0AE] sm:ml-6 sm:mt-0 mt-4 font-lato">
     ©Webecy - 
         <a
           href="https://twitter.com/knyttnev"

@@ -4,10 +4,10 @@ import Image from "next/image";
 
 export default function Home() {
     const features = [
-      { icon: '/13.png', title: '24/7 Support', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.' },
-      { icon: '/14.png', title: 'Affordable Prices', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.' },
-      { icon: '/15.png', title: 'Premium Quality', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.' },
-      { icon: '/16.png', title: 'Fast Delivery', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.' },
+      { icon: '/shopex/feature1.png', title: '24/7 Support', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.' },
+      { icon: '/shopex/feature2.png', title: 'Affordable Prices', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.' },
+      { icon: '/shopex/feature3.png', title: 'Premium Quality', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.' },
+      { icon: '/shopex/feature4.png', title: 'Fast Delivery', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.' },
     ];
   
     return (
@@ -18,7 +18,8 @@ export default function Home() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center text-center bg-white p-6 rounded-lg shadow-2xl shadow-gray-200 w-[270px] h-[320px]"
+              className="flex flex-col items-center justify-center text-center bg-white p-6 
+              rounded-lg shadow-2xl shadow-gray-200 w-[270px] h-[320px] hover:border-b-2 hover:border-b-[#FF9100]"
             >
               <Image src={feature.icon} alt={feature.title} className="w-16 h-16 mb-4" 
               width={160} height={16} />

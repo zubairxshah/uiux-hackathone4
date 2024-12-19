@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const NotFound = () => {
@@ -37,12 +38,12 @@ const NotFound = () => {
                     <h3 className='text-lg sm:text-xl md:text-2xl text-brinjal mb-8 sm:mb-12 md:mb-20 font-josefin font-bold'>
                         oops! The page you requested was not found!
                     </h3>
-                    <a 
+                    <Link 
                         className='inline-block bg-pink text-white font-josefin py-3 sm:py-4 px-6 sm:px-8 rounded-sm hover:bg-opacity-90 transition-all duration-300' 
                         href="/"
                     >
                         Back To Home
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Bottom Logo */}

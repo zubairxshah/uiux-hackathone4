@@ -1,6 +1,7 @@
 import React from "react";
 import Features from "./Features";
 import ClientMover from "./clientmover";
+import Image from "next/image";
 
 const About = () => {
   return (
@@ -20,10 +21,12 @@ const About = () => {
         <div className=" flex ">
           <div className="bg-violet w-[555px] h-[249px] lg:h-[409px] pl-4 pb-4 -pr-9 rounded-lg ">
             <div className=" absolute">
-              <img
-                className="lg:w-full"
+              <Image
+                className="lg:w-full w-auto"
                 src="/client/aboutus.png"
                 alt=""
+                width={555}
+                height={409}
               />
             </div>
           </div>
